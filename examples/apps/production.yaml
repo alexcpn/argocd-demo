@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: 'https://github.com/alexcpn/argocd-demo'
     path: examples/overlays/production_working/
-    targetRevision: HEAD
+    targetRevision: prod.rel.green
     directory:
       recurse: false
   project: default

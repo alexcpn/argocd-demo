@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: 'https://github.com/alexcpn/argocd-demo'
     path: examples/overlays/staging_working/
-    targetRevision: v1.3
+    targetRevision: staging.rel.blue
     directory:
       recurse: false
   project: default
