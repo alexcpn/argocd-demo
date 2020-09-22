@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: the-deployment1
+  namespace: app1
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+      - name: the-container
+        image: alpine:3.12.0
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: the-deployment2
+  namespace: app2
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+      - name: the-container
+        image: alpine:3.11.6
