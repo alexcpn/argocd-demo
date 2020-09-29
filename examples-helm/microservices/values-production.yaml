@@ -1,0 +1,14 @@
+# Default Values for 
+
+app1:
+  image: monopole/hello:1
+  replicas: 2
+
+app2:
+  image: monopole/hello:2
+  replicas: 2
+
+
+spec:
+  destination:
+    server: 'https://kubernetes.default.svc'
