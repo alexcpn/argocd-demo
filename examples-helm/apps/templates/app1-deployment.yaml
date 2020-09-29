@@ -4,7 +4,7 @@ metadata:
   name: the-deployment1
   namespace: app1
 spec:
-  replicas: {{ .Values.app1.replicas }}
+  replicas: {{ toYaml .Values.app1.replicas  }} 
   selector:
     matchLabels:
       deployment: hello
@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: the-container
-        image: {{ .Values.app1.image }}
+        image: {{ toYaml .Values.app1.image  }}
         command: ["/hello",
                   "--port=8080",
                   "--enableRiskyFeature=$(ENABLE_RISKY)"]
