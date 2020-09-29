@@ -3,3 +3,4 @@ appVersion: "1.0"
 description: App of Apps for ArgoCD
 name: applications
 version: 0.1.0
+engine: gotpl

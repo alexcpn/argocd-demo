@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: 'https://github.com/alexcpn/argocd-demo'
     path: examples-helm/apps/templates/
-    targetRevision: prod-helm.rel.green
+    targetRevision: staging
     directory:
       recurse: false
   project: default
