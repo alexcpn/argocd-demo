@@ -9,7 +9,7 @@ spec:
     server: {{ .Values.spec.destination.server }}
   source:
     repoURL: 'https://github.com/alexcpn/argocd-demo'
-    path: examples-helm/apps/templates/
+    path: examples-helm/apps/
     targetRevision: staging
     directory:
       recurse: false
