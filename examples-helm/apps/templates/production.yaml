@@ -17,4 +17,7 @@ spec:
       valueFiles:
         - values-production.yaml
   project: default
-  syncPolicy: {}
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
