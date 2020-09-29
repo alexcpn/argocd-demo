@@ -6,7 +6,7 @@ metadata:
 spec:
   destination:
     namespace: argocd
-    server: {{ .Values.spec.destination.server }}
+    server: {{ .Values.spec.prod.destination.server }}
   source:
     repoURL: 'https://github.com/alexcpn/argocd-demo'
     path: examples-helm/microservices/

@@ -1,14 +1,6 @@
 # Default Values for 
 
-app1:
-  image: monopole/hello:1
-  replicas: 1
-
-app2:
-  image: monopole/hello:2
-  replicas: 1
-
-
 spec:
-  destination:
-    server: 'https://10.131.228.112:6443'
+  staging:
+    destination:
+      server: 'https://10.131.228.112:6443'
