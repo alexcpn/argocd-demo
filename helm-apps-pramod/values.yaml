@@ -1,0 +1,3 @@
+targetrevision:
+    node: 13.0.1
+    wildfly: 4.3.0
