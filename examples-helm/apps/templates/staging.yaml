@@ -9,7 +9,7 @@ spec:
     server: 'https://10.131.228.112:6443'
   source:
     repoURL: 'https://github.com/alexcpn/argocd-demo'
-    path: examples-helm/templates/
+    path: examples-helm/apps/templates/
     targetRevision: staging-helm.rel.blue
     directory:
       recurse: false

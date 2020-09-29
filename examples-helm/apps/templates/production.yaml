@@ -9,7 +9,7 @@ spec:
     server: 'https://kubernetes.default.svc'
   source:
     repoURL: 'https://github.com/alexcpn/argocd-demo'
-    path: examples-helm/templates/
+    path: examples-helm/apps/templates/
     targetRevision: prod-helm.rel.green
     directory:
       recurse: false
