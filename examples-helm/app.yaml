@@ -13,4 +13,15 @@ spec:
   source:
     repoURL: 'https://github.com/alexcpn/argocd-demo'
     path: examples-helm/apps/
-    targetRevision: HEAD
+    targetRevision: staging
+    directory:
+      recurse: false
+    helm:
+      valueFiles:
+        - values-production.yaml
+        - values-staging.yaml
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
