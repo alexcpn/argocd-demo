@@ -6,17 +6,18 @@ metadata:
 spec:
   destination:
     namespace: argocd
-    server: 'https://10.131.228.112:6443'
+    server: {{ .Values.spec.destination.server }}
   source:
     repoURL: 'https://github.com/alexcpn/argocd-demo'
     path: examples-helm/apps/templates/
     targetRevision: staging
     directory:
       recurse: false
+    helm:
+      valueFiles:
+        - values-staging.yaml
   project: default
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
-  kustomize:
-      version: v3.8.2
