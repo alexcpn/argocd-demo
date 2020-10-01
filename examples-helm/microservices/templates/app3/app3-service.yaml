@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: the-service3
+  namespace: app3
+spec:
+  selector:
+    deployment: hello3
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 8666
+    targetPort: 8080

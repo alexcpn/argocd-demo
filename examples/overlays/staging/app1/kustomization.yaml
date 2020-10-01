@@ -1,5 +1,0 @@
-bases:
-- ../../../base/app1
-patchesStrategicMerge:
-- deployment.yaml
-

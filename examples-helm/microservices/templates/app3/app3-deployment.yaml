@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: the-deployment3
+  namespace: app3
+spec:
+  replicas: {{ .Values.app3.replicas }}
+  selector:
+    matchLabels:
+      deployment: hello3
+  template:
+    metadata:
+      labels:
+        deployment: hello3
+    spec:
+      containers:
+      - name: the-container
+        image: {{ .Values.app3.image }}
+        command: ["/hello",
+                  "--port=8080",
+                  "--enableRiskyFeature=$(ENABLE_RISKY)"]
+        ports:
+        - containerPort: 8080
+        env:
+        - name: ALT_GREETING
+          valueFrom:
+            configMapKeyRef:
+              name: the-map
+              key: altGreeting
+        - name: ENABLE_RISKY
+          valueFrom:
+            configMapKeyRef:
+              name: the-map
+              key: enableRisky

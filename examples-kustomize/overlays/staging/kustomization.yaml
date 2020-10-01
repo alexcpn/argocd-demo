@@ -7,6 +7,5 @@ bases:
 - ../../base/app1
 - ../../base/app2
 patchesStrategicMerge:
-- app1_deployment.yaml
-- app2_deployment.yaml
+- deployment.yaml
 #namespace: staging
