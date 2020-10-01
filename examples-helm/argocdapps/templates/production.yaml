@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: 'https://github.com/alexcpn/argocd-demo'
     path: examples-helm/microservices/
-    targetRevision: v1.4
+    targetRevision: v-sysve1-1.*
     helm:
       valueFiles:
         - values-production.yaml
