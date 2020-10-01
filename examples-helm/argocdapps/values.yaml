@@ -1,6 +1,9 @@
 # Default Values for 
 
 spec:
+  production:
+    destination:
+      server: 'https://10.131.228.112:6443'
   staging:
     destination:
       server: 'https://kubernetes.default.svc'

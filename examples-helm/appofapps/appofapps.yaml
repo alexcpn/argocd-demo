@@ -18,8 +18,7 @@ spec:
       recurse: false
     helm:
       valueFiles:
-        - values-production.yaml
-        - values-staging.yaml
+        - values.yaml
   project: default
   syncPolicy:
     automated:
