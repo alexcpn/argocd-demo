@@ -2,7 +2,7 @@
 
 app1:
   image: monopole/hello:1
-  replicas: 2
+  replicas: 1
 
 app2:
   image: monopole/hello:2
