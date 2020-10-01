@@ -1,18 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: stagingworking-helm
+  name: staging
   namespace: argocd
 spec:
   destination:
     namespace: argocd
-    server: {{ .Values.spec.staging.destination.server }}
+    server: 'https://10.131.228.112:6443'
   source:
     repoURL: 'https://github.com/alexcpn/argocd-demo'
     path: examples-helm/microservices/
     targetRevision: staging
     directory:
-      recurse: false
+      recurse: true
     helm:
       valueFiles:
         - values-staging.yaml
