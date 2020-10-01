@@ -40,6 +40,6 @@ The appofapps folder has the Argocd main app that point to other Helmbase argocd
 
 Here is the main app and sub Apps
 
-![https://i.imgur.com/VzKFiiJ.png]
+![appofapps](https://i.imgur.com/VzKFiiJ.png)
 
 
