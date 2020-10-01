@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: the-deployment1
-  namespace: app1
+  name: the-deployment3
+  namespace: app3
 spec:
-  replicas: {{ .Values.app1.replicas }}
+  replicas: {{ .Values.app3.replicas }}
   selector:
     matchLabels:
-      deployment: hello1
+      deployment: hello3
   template:
     metadata:
       labels:
-        deployment: hello1
+        deployment: hello
     spec:
       containers:
       - name: the-container
-        image: {{ .Values.app1.image }}
+        image: {{ .Values.app3.image }}
         command: ["/hello",
                   "--port=8080",
                   "--enableRiskyFeature=$(ENABLE_RISKY)"]

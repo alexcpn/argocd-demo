@@ -1,11 +1,11 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: the-service2
-  namespace: app2
+  name: the-service
+  namespace: app3
 spec:
   selector:
-    deployment: hello2
+    deployment: hello3
   type: LoadBalancer
   ports:
   - protocol: TCP
