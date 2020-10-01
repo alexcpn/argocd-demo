@@ -9,5 +9,5 @@ spec:
       server: 'https://kubernetes.default.svc'
       
   destination:
-    cluster1tag: v.200.*
-    cluster2tag: v.300.*
+    cluster1tag: v.200.2
+    cluster2tag: v.300.1
