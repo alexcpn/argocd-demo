@@ -4,7 +4,7 @@
 
 eamples-kustomize Directory
 
-├───apps
+├───appofapps
 ├───argocdapps
 ├───base
 │   ├───app1
@@ -13,26 +13,26 @@ eamples-kustomize Directory
     ├───production
     └───staging
 
-The top apps folder will have Kustomize based ArgoCD Apps; that is 
-templated by Kustomize. These deploy the microserviecs, app1 and app2.
-You need to appy via kubectl argocdapps/appofapps.yaml
+The top appofapps folder has the main ArgoCD app that points to 
+argocdapps folder, which contains the Kustomize based ArgocdApps
+produciton and staging which deploy to production and staging cluster the microservices (here app1 and app2)
 
 
 ## Helm Example
 
-examples-helm Directory
-
-├───apps
+├───appofapps
+├───argocdapps
 │   ├───charts
 │   └───templates
-├───argocdapps
 └───microservices
     ├───charts
     └───templates
+        ├───app1
+        ├───app2
         └───app3
 
 Here the microservics folder has the helm based apps app1, app2,app3
-The apps folder has the Argocd spps
+The appofapps folder has the Argocd main app that point to other Helmbase argocdapps folder. This has produciton and staging ArgoCD apps that deploy the MS to production and staging clusters with different images and replicas
 
 
 
