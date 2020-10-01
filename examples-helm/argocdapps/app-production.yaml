@@ -1,22 +1,26 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: stagingworking
+  name: app-production
   namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     namespace: argocd
     server: 'https://10.131.228.112:6443'
+  project: default
   source:
     repoURL: 'https://github.com/alexcpn/argocd-demo'
-    path: examples/overlays/staging_working/
-    targetRevision: staging.rel.blue
+    path: examples-helm/microservices/
+    targetRevision: staging
     directory:
       recurse: false
+    helm:
+      valueFiles:
+        - values-production.yaml
   project: default
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
-  kustomize:
-      version: v3.8.2

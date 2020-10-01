@@ -11,7 +11,7 @@ spec:
   template:
     metadata:
       labels:
-        deployment: hello
+        deployment: hello3
     spec:
       containers:
       - name: the-container

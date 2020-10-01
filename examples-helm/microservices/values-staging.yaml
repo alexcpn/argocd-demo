@@ -11,8 +11,3 @@ app2:
 app3:
   image: monopole/hello:2
   replicas: 1
-
-
-spec:
-  destination:
-    server: 'https://10.131.228.112:6443'

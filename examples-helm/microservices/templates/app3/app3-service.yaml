@@ -1,7 +1,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: the-service
+  name: the-service3
   namespace: app3
 spec:
   selector:

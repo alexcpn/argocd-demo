@@ -3,4 +3,4 @@
 spec:
   production:
     destination:
-      server: 'https://kubernetes.default.svc'
+      server: 'https://10.131.228.112:6443'
