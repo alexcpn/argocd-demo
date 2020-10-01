@@ -11,8 +11,6 @@ spec:
     repoURL: 'https://github.com/alexcpn/argocd-demo'
     path: examples-kustomize/overlays/staging/
     targetRevision: staging.rel.blue
-    directory:
-      recurse: false
   project: default
   syncPolicy:
     automated:
