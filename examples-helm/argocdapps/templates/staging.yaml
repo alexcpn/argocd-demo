@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: 'https://github.com/alexcpn/argocd-demo'
     path: examples-helm/microservices/
-    targetRevision: v-sysve2-1.*
+    targetRevision: {{ .Values.spec.destination.cluster2tag }}
     helm:
       valueFiles:
         - values-staging.yaml

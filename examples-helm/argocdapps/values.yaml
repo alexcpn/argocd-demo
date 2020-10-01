@@ -7,3 +7,7 @@ spec:
   staging:
     destination:
       server: 'https://kubernetes.default.svc'
+      
+  destination:
+    cluster1tag: v-sysve1-1.*
+    cluster2tag: v-sysve2-1.*
