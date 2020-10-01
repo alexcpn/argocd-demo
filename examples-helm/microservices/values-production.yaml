@@ -8,6 +8,10 @@ app2:
   image: monopole/hello:2
   replicas: 2
 
+app3:
+  image: monopole/hello:2
+  replicas: 2
+
 
 spec:
   destination:
