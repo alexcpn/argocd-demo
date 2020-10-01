@@ -12,7 +12,7 @@ spec:
   project: default
   source:
     repoURL: 'https://github.com/alexcpn/argocd-demo'
-    path: examples-helm/apps/
+    path: examples-helm/argocdapps/
     targetRevision: staging
     directory:
       recurse: false
