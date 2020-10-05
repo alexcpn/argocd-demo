@@ -12,6 +12,6 @@ spec:
       server: 'https://10.131.228.112:6443'
       
   destination:
-    production: main
+    production: master
     staging1: v.300.1
     staging2: v.200.2
