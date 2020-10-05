@@ -4,10 +4,14 @@ spec:
   production:
     destination:
       server: 'https://10.131.228.112:6443'
-  staging:
+  staging1:
     destination:
       server: 'https://kubernetes.default.svc'
+  staging2:
+    destination:
+      server: 'https://10.131.228.112:6443'
       
   destination:
-    cluster1tag: v.200.2
-    cluster2tag: v.300.1
+    production: main
+    staging1: v.300.1
+    staging2: v.200.2

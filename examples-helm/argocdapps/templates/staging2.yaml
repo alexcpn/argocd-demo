@@ -1,16 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: staging
+  name: staging2
   namespace: argocd
 spec:
   destination:
     namespace: argocd
-    server: {{ .Values.spec.staging1.destination.server }}
+    server: {{ .Values.spec.staging2.destination.server }}
   source:
     repoURL: 'https://github.com/alexcpn/argocd-demo'
     path: examples-helm/microservices/
-    targetRevision: {{ .Values.spec.destination.staging1 }}
+    targetRevision: {{ .Values.spec.destination.staging2 }}
     helm:
       valueFiles:
         - values-staging.yaml

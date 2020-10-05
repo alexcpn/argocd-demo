@@ -1,21 +1,21 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: production-helm
-  namespace: argocd
-spec:
-  destination:
-    namespace: argocd
-    server: {{ .Values.spec.production.destination.server }}
-  source:
-    repoURL: 'https://github.com/alexcpn/argocd-demo'
-    path: examples-helm/microservices/
-    targetRevision: {{ .Values.spec.destination.cluster1tag }}
-    helm:
-      valueFiles:
-        - values-production.yaml
-  project: default
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: production-helm
+#   namespace: argocd
+# spec:
+#   destination:
+#     namespace: argocd
+#     server: {{ .Values.spec.production.destination.server }}
+#   source:
+#     repoURL: 'https://github.com/alexcpn/argocd-demo'
+#     path: examples-helm/microservices/
+#     targetRevision: {{ .Values.spec.destination.production }}
+#     helm:
+#       valueFiles:
+#         - values-production.yaml
+#   project: default
+#   syncPolicy:
+#     automated:
+#       prune: true
+#       selfHeal: true
