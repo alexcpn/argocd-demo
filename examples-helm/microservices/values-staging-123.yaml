@@ -1,8 +1,8 @@
 # Default Values for 
 
 app1:
-  image: monopole/hello:1
-  replicas: 0
+  image: monopole/hello:2
+  replicas: 1
 
 app2:
   image: monopole/hello:2
