@@ -12,15 +12,15 @@ spec:
       server: 'https://10.131.228.112:6443'
     microservice:
       valueFiles: 
-      - values/values-staging-124.yaml
-      - versions.yaml
+      - 'values/values-staging-124.yaml'
+      - 'versions.yaml'
   blue:
     destination:
       server: 'https://10.131.228.112:6443'
     microservice:
       valueFiles: 
-      - values/values-staging-124.yaml
-      - versions.yaml
+      - 'values/values-staging-124.yaml'
+      - 'versions.yaml'
       
   destination:
     production: master
