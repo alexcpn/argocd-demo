@@ -10,6 +10,8 @@ spec:
   staging2:
     destination:
       server: 'https://10.131.228.112:6443'
+    microservice:
+      valuesfile: 'values-staging.yaml'
       
   destination:
     production: master
