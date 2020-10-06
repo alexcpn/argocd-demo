@@ -13,7 +13,8 @@ spec:
     targetRevision: {{ .Values.spec.destination.blue }}
     helm:
       valueFiles:
-        - {{ .Values.spec.blue.microservice.valuesfile }}
+        - values/values-staging-124.yaml
+        - versions.yaml
   project: default
   syncPolicy:
      automated:
