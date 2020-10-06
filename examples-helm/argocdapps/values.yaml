@@ -16,7 +16,7 @@ spec:
     destination:
       server: 'https://10.131.228.112:6443'
     microservice:
-      valuesfile: 'values\dc1\da-blue\values.yaml'
+      valuesfile: 'values/dc1/da-blue/values.yaml',versions.yaml
       
   destination:
     production: master
