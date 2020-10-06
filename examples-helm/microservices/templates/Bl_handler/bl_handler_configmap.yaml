@@ -12,7 +12,7 @@ data:
         LogLevel : 0
         HwimAddress : hwinvmgmt:50001
         UmAddress   : daas-um:4001
-        S3Endpoint: {{ Values.accountlicensehandler.S3InternalEndpoint}} 
+        S3Endpoint: {{ .Values.accountlicensehandler.S3InternalEndpoint}} 
         S3SecretKeyPath: /etc/s3/secret_key 
         S3AccessKeyPath : /etc/s3/access_key
         S3UseSSL: true
