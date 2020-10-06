@@ -15,7 +15,7 @@ spec:
       valueFiles:
         - values-staging.yaml
   project: default
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
+  # syncPolicy:
+  #   automated:
+  #     prune: true
+  #     selfHeal: true
