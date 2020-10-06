@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: da-blue
+  namespace: argocd
+spec:
+  destination:
+    namespace: argocd
+    server: {{ .Values.spec.blue.destination.server }}
+  source:
+    repoURL: 'https://github.com/alexcpn/argocd-demo'
+    path: examples-helm/microservices/
+    targetRevision: {{ .Values.spec.destination.blue }}
+    helm:
+      valueFiles:
+        - {{ .Values.spec.blue.microservice.valuesfile }} versions.yaml
+  project: default
+  # syncPolicy:
+  #   automated:
+  #     prune: true
+  #     selfHeal: true

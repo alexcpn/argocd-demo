@@ -1,0 +1,12 @@
+# Default Values for 
+#inlcude "..vlaues.yaml"
+
+common:
+  registry: 'prod'
+  pullsecret: "sdsds"
+  cassandra_contact_points: "1.1.1.1"
+  
+
+accountlicensehandler:
+  S3InternalEndpoint: 1
+
