@@ -11,7 +11,7 @@ spec:
     destination:
       server: 'https://10.131.228.112:6443'
     microservice:
-      valuesfile: 'values-staging.yaml'
+      valuesfile: 'values/values-staging-123.yaml'
   blue:
     destination:
       server: 'https://10.131.228.112:6443'
