@@ -1,3 +1,5 @@
+# Default Values for 
+#inlcude "../../version.yaml"
 
 common:
   registry: "prod-registry"
