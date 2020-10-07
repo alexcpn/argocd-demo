@@ -59,7 +59,7 @@ spec:
         - mountPath: /etc/s3
           name: s3-db-migration-secret
       imagePullSecrets:
-      - name: {{.Values.common.pullsecret}}
+      - name: {{.Values.common.pullsecret | quote}}
       restartPolicy: Always
       volumes:
       - name: alh-cassandra-secret
