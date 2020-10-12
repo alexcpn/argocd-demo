@@ -1,6 +1,5 @@
 # Default Values for 
 
-
 common:
   registry: "prod-registry"
   pullsecret: "sdsds"
