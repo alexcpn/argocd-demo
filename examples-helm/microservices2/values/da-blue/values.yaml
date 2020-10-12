@@ -1,0 +1,17 @@
+# Default Values for 
+#inlcude "../../version.yaml"
+
+cluster: "da-blue"
+common:
+  registry: "prod-registry"
+  pullsecret: "sdsds"
+  cassandra_contact_points: "1.1.1.1"
+  
+
+accountlicensehandler:
+  S3InternalEndpoint: "2.2.2.2"
+  s3SecretKey: "add here"
+  s3AccessKey: "add here"
+
+
+

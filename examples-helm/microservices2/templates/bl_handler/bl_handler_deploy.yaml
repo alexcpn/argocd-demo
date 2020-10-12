@@ -1,0 +1,76 @@
+---
+#apiVersion: extensions/v1beta1
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    NDACowner: ""
+  annotations:
+    configmap.reloader.stakater.com/reload: "alh-properties"
+    secret.reloader.stakater.com/reload: "alh-cassandra-secret"
+  labels:
+    app: daas-alh
+  name: daas-alh
+  namespace: daas
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: daas-alh
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        sidecar.istio.io/inject: "false"
+      labels:
+        app: daas-alh
+      name: daas-alh
+    spec:
+      containers:
+      - image: "{{.Values.common.registry}}/daas/accountlicensehandler:{{.Values.daasalh}}"
+        imagePullPolicy: IfNotPresent
+        name: daasalh
+        livenessProbe:
+          failureThreshold: 3
+          initialDelaySeconds: 20
+          tcpSocket:
+            port: 60006
+          timeoutSeconds: 1
+        name: daas-alh
+        readinessProbe:
+          failureThreshold: 3
+          initialDelaySeconds: 20       
+          tcpSocket:
+            port: 60006
+          timeoutSeconds: 1
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /etc/alh_conf
+          name: alh-cassandra-secret
+          readOnly: true
+        - mountPath: /etc/alh_properties
+          name: alh-properties
+        - mountPath: /etc/s3
+          name: s3-db-migration-secret
+      imagePullSecrets:
+      - name: {{.Values.common.pullsecret | quote}}
+      restartPolicy: Always
+      volumes:
+      - name: alh-cassandra-secret
+        secret:
+          defaultMode: 420
+          secretName: alh-cassandra-secret
+      - configMap:
+          defaultMode: 420
+          name: alh-properties
+        name: alh-properties
+      - name: s3-db-migration-secret
+        secret:
+          defaultMode: 420
+          secretName: s3-alh-db-migrations 

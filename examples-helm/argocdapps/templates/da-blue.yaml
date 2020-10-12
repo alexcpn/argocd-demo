@@ -9,11 +9,11 @@ spec:
     server: {{ .Values.spec.blue.destination.server }}
   source:
     repoURL: 'https://github.com/alexcpn/argocd-demo'
-    path: examples-helm/microservices/
+    path: examples-helm/microservices2/
     targetRevision: {{ .Values.spec.destination.blue }}
     helm:
       valueFiles:
-        - values/values-staging-124.yaml
+        - values/values-blue.yaml
         - versions.yaml
   project: default
   syncPolicy:

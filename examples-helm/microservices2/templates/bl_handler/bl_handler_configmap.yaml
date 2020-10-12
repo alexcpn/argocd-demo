@@ -1,0 +1,60 @@
+---
+apiVersion: v1
+data:
+  alh.properties: |
+     #Cassandra DB Properties
+        DbHostName : {{.Values.common.cassandra_contact_points}}
+        DbUserName : alh
+        DbKeySpaceName : alh
+        DbPort : 9042
+        DbNumOfConn : 1
+        AlhPort : 60006
+        LogLevel : 0
+        HwimAddress : hwinvmgmt:50001
+        UmAddress   : daas-um:4001
+        S3Endpoint: {{ .Values.accountlicensehandler.S3InternalEndpoint}} 
+        S3SecretKeyPath: /etc/s3/secret_key 
+        S3AccessKeyPath : /etc/s3/access_key
+        S3UseSSL: true
+        S3BucketName: "alh-db-migration"
+        LicenseDetails: [
+        { LicenseId : "NDAC-3473" , LicenseDescription : "3GPP radio signalling trace collection" },
+        { LicenseId : "NDAC-4685" , LicenseDescription : "multiple APN configuration" },
+        { LicenseId : "NDAC-4798" , LicenseDescription : "configurable S1 transport"},
+        { LicenseId : "NDAC-1860" , LicenseDescription : "Applications support on NDAC platform"},
+        { LicenseId : "NDAC-6621" , LicenseDescription : "Radio metrics"},
+        { LicenseId : "NDAC-6794" , LicenseDescription : "Wi-Fi services"},
+        { LicenseId : "NDAC-2609" , LicenseDescription : "Device specific throughput monitoring"},
+        { LicenseId : "NDAC-4237" , LicenseDescription : "Radio FM metrics API"},
+        { LicenseId : "NDAC-4238" , LicenseDescription : "Radio PM metrics API"},
+        { LicenseId : "NDAC-6163" , LicenseDescription : "Geo-redundant edge cloud"},
+        { LicenseId : "NDAC-7067" , LicenseDescription : "Lightweight local VoIP"},
+        { LicenseId : "NDAC-4861" , LicenseDescription : "IMSI-IMEI Locking"},
+        { LicenseId : "NDAC-9753" , LicenseDescription : "5G NSA and SA"},
+        { LicenseId : "NDAC-6461" , LicenseDescription : "Routing behind UE"},
+        { LicenseId : "APP:NDAC-7713" , LicenseDescription : "Application - NDAC Indoor positioning"},
+        { LicenseId : "APP:NDAC-7714" , LicenseDescription : "Application - NDAC Drone Networks"},
+        { LicenseId : "APP:NDAC-8257" , LicenseDescription : "[DEMO] Application - NDAC ML model management"},
+        { LicenseId : "APP:NDAC-8523" , LicenseDescription : "[DEMO] Application - NDAC IoT MQTT broker"},
+        { LicenseId : "APP:NDAC-9401" , LicenseDescription : "[DEMO] Application - NDAC Consul"},
+        { LicenseId : "APP:NDAC-9408" , LicenseDescription : "Application - NDAC Azure IoT Runtime"},
+        { LicenseId : "APP:NDAC-10302" , LicenseDescription : "[DEMO] Application - NDAC Azure Gateway"},
+        { LicenseId : "APP:NDAC-9413" , LicenseDescription : "Application - NDAC Scene Analytics Gateway"},
+        { LicenseId : "APP:NDAC-9615" , LicenseDescription : "[DEMO] Application - NDAC IMU Gesture Recognition"},
+        { LicenseId : "APP:NDAC-9616" , LicenseDescription : "[DEMO] Application - NDAC Open Source IoT Platform, FogLAMP"},
+        { LicenseId : "APP:NDAC-9537" , LicenseDescription : "Application - NDAC Team Communication Server"},
+        { LicenseId : "APP:NDAC-9397" , LicenseDescription : "Application - NDAC NSC Domain Proxy"},
+        { LicenseId : "APP:NDAC-9750" , LicenseDescription : "[DEMO] Application - NDAC Bell Labs World Wide Streams"},
+        { LicenseId : "APP:NDAC-9779" , LicenseDescription : "[DEMO] Application - NDAC Wi-Fi"},
+        { LicenseId : "APP:NDAC-10280" , LicenseDescription : "[DEMO] Application - NDAC Bell Labs World Wide Streams - Events Focus"},
+        { LicenseId : "APP:NDAC-10281" , LicenseDescription : "[DEMO] Application - NDAC Bell Labs World Wide Streams - Media Focus"},
+        { LicenseId : "APP:NDAC-9282" , LicenseDescription : "Application - NDAC Device Management"},
+        { LicenseId : "APP:NDAC-10945" , LicenseDescription : "[DEMO] Application - NDAC Indoor Health Control Tracker"},
+        { LicenseId : "APP:NDAC-10990" , LicenseDescription : "[DEMO] Application - iPerf"}
+        ]
+kind: ConfigMap
+metadata:
+  annotations:
+    NDACowner: ""
+  name: alh-properties
+  namespace: daas
