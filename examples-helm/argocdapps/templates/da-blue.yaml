@@ -13,7 +13,7 @@ spec:
     targetRevision: {{ .Values.spec.destination.blue }}
     helm:
       valueFiles:
-        - values/values-blue.yaml
+        - values/da-blue/values.yaml
         - versions.yaml
   project: default
   syncPolicy:
