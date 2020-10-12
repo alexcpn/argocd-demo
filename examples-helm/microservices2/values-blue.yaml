@@ -1,13 +1,11 @@
 # Default Values for 
 
-app1:
-  image: monopole/hello:2
-  replicas: 1
 
-app2:
-  image: monopole/hello:2
-  replicas: 0
+common:
+  registry: "prod-registry"
+  pullsecret: "sdsds"
+  cassandra_contact_points: "1.1.1.1"
+  
 
-app3:
-  image: monopole/hello:2
-  replicas: 1
+accountlicensehandler:
+  S3InternalEndpoint: "2.2.2.2"
